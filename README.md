@@ -15,7 +15,7 @@ npm install --save react-markdown
 var React = require('react')
 var Markdown = require('react-markdown')
 
-class MyComponent extends React.Component {
+class Example extends React.Component {
 	render() {
 		return (
 			<div>

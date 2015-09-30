@@ -1,5 +1,6 @@
-import React from 'react';
+import React from 'react'
 import Markdown from 'markdown-it/dist/markdown-it.js'
+import stripIndent from 'strip-indent'
 
 export default class extends React.Component {
 	static defaultProps = {
@@ -10,13 +11,13 @@ export default class extends React.Component {
 	render() {
 		var Container = this.props.container
 		return <Container>{this.content()}</Container>
-	},
+	}
 
 	componentWillUpdate(nextProps, nextState) {
 		if (nextProps.options !== this.props.options) {
 			this.md = new Markdown(nextProps.options)
 		}
-	},
+	}
 
 	content() {
 		if (this.props.source) {
@@ -30,12 +31,12 @@ export default class extends React.Component {
 				}
 			})
 		}
-	},
+	}
 
 	renderMarkdown(source) {
 		if (!this.md) {
 			this.md = new Markdown(this.props.options)
 		}
-		return this.md.render(source)
+		return this.md.render(stripIndent(source))
 	}
 }
