@@ -1,18 +1,19 @@
 react-remarkable
 =================
 
-A React component for rendering Markdown with [remarkable](https://github.com/jonschlinkert/remarkable).
+A React component for rendering Markdown with
+[markdown-it](https://github.com/markdown-it/markdown-it).
 
 ```
-npm install --save react-remarkable
+npm install --save react-markdown
 ```
 
 ## Usage
 
 ```jsx
 
-var React = require('react');
-var Markdown = require('react-remarkable');
+var React = require('react')
+var Markdown = require('react-markdown')
 
 var MyComponent = React.createClass({
 
@@ -25,14 +26,18 @@ var MyComponent = React.createClass({
         {/* Or pass it as children */}
         {/* You can nest React components, too */}
         <Markdown>
+		  {`
           ## Reasons React is great
 
           1. Server-side rendering
           2. This totally works:
+		  `}
 
           <SomeOtherAmazingComponent />
 
-          Pretty neat!
+          {`
+		  Pretty neat!
+		  `}
         </Markdown>
       </div>
     );
