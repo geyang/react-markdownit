@@ -1,6 +1,6 @@
 {
-  "name": "react-markdown",
-  "version": "1.0.0",
+  "name": "react-markdown-it",
+  "version": "1.0.1",
   "description": "A React component for rendering Markdown with remarkable",
   "main": "lib/index.js",
   "repository": {
@@ -21,7 +21,7 @@
     "webpack": "^1.12.2"
   },
   "scripts": {
-    "build": "babel src -d lib --modules common",
+    "build": "babel src -d lib --modules common --stage 0",
     "prepublish": "npm run build"
   },
   "keywords": [
