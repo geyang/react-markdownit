@@ -1,7 +1,6 @@
 # react-markdown
 
-A React component for rendering Markdown with
-[markdown-it](https://github.com/markdown-it/markdown-it).
+A React component for rendering Markdown with [markdown-it](https://github.com/markdown-it/markdown-it).
 
 ## Install
 

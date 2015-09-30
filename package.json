@@ -1,7 +1,7 @@
 {
   "name": "react-markdown-it",
-  "version": "1.0.1",
-  "description": "A React component for rendering Markdown with remarkable",
+  "version": "1.0.2",
+  "description": "A React component for rendering Markdown with markdown-it",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
