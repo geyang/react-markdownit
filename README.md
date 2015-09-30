@@ -1,8 +1,9 @@
-react-remarkable
-=================
+# react-markdown
 
 A React component for rendering Markdown with
 [markdown-it](https://github.com/markdown-it/markdown-it).
+
+## Install
 
 ```
 npm install --save react-markdown
@@ -11,47 +12,55 @@ npm install --save react-markdown
 ## Usage
 
 ```jsx
-
 var React = require('react')
 var Markdown = require('react-markdown')
 
-var MyComponent = React.createClass({
+class MyComponent extends React.Component {
+	render() {
+		return (
+			<div>
+				{/* Pass Markdown source to the `source` prop */}
+				<Markdown source="**Markdown is awesome!**" />
 
-  render() {
-    return (
-      <div>
-        {/* Pass Markdown source to the `source` prop */}
-        <Markdown source="**Markdown is awesome!**" />
+				{/* Or pass it as children */}
+				{/* You can nest React components, too */}
+				<Markdown>
+					{`
+					## Header
 
-        {/* Or pass it as children */}
-        {/* You can nest React components, too */}
-        <Markdown>
-		  {`
-          ## Reasons React is great
+					1. One
+					2. Two
+					`}
 
-          1. Server-side rendering
-          2. This totally works:
-		  `}
+					<div>Nested component</div>
 
-          <SomeOtherAmazingComponent />
-
-          {`
-		  Pretty neat!
-		  `}
-        </Markdown>
-      </div>
-    );
-  }
-
-});
-
+					{`Test`}
+				</Markdown>
+			</div>
+		)
+	}
+}
 ```
 
-Available props:
+## Props
 
-- `options` - Hash of Remarkable options
-- `source`  - Markdown source. You can also pass the source as children, which allows you to mix React components and Markdown.
-- `container` - Element to use as container. Defaults to `span`.
+### options
+
+Type: `object`
+
+Options for `markdown-it`.
+
+### source
+
+Type: `string`
+
+Markdown source. You can also pass the source as children,
+which allows you to mix React components and Markdown.
+
+### container 
+
+Element to use as container. Defaults to `div`.
 
 ## License
+
 MIT

@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/acdlite/react-remarkable.git"
+    "url": "https://github.com/sunflowerdeath/react-markdown"
   },
   "dependencies": {
     "markdown-it": "^4.4.0"
@@ -23,5 +23,6 @@
     "commonmark"
   ],
   "author": "Andrew Clark <acdlite@me.com>",
+  "maintainer": "sunflowerdeath",
   "license": "MIT"
 }
