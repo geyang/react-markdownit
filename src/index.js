@@ -1,16 +1,27 @@
-import React from 'react'
-import Markdown from 'markdown-it/dist/markdown-it.js'
-import stripIndent from 'strip-indent'
+import React, {PropTypes, Component} from 'react';
+import Markdown from 'markdown-it';
+import stripIndent from 'strip-indent';
 
-export default class extends React.Component {
+var {string, object} = PropTypes;
+
+export default class MarkdownIt extends Component {
+
+	static propTypes = {
+		container: string,
+		stringIndent: string,
+		options: object
+	};
+
 	static defaultProps = {
+		/** the container should be <article> if it is the top-level  */
 		container: 'div',
+		stripIndent: false,
 		options: {}
-	}
+	};
 
 	render() {
-		var Container = this.props.container
-		return <Container>{this.content()}</Container>
+		var {Container} = this.props;
+		return (<Container>{this.content()}</Container>);
 	}
 
 	componentWillUpdate(nextProps, nextState) {
@@ -20,9 +31,8 @@ export default class extends React.Component {
 	}
 
 	content() {
-		if (this.props.source) {
-			return <span dangerouslySetInnerHTML={{__html: this.renderMarkdown(this.props.source)}}/>
-		} else {
+		if (this.props.source)
+			return (<span dangerouslySetInnerHTML={{__html: this.renderMarkdown(this.props.source)}}/>);
 			return React.Children.map(this.props.children, child => {
 				if (typeof child === 'string') {
 					return <span dangerouslySetInnerHTML={{__html: this.renderMarkdown(child)}}/>
@@ -30,7 +40,6 @@ export default class extends React.Component {
 					return child
 				}
 			})
-		}
 	}
 
 	renderMarkdown(source) {

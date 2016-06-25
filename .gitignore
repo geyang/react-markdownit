@@ -12,3 +12,6 @@ example/dist
 Session.vim
 .netrwhist
 *~
+
+# webstorm
+.idea
