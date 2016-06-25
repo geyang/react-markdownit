@@ -6,6 +6,10 @@ dist
 lib
 example/dist
 
+*.log
+*.logs
+**.log
+**.logs
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
 *.un~
