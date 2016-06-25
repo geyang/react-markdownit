@@ -6,6 +6,6 @@ import Example from './example.js'
 document.addEventListener('DOMContentLoaded', function () {
 	ReactDOM.render(
 		React.createElement(Example),
-		document.querySelector('.container')
+		document.querySelector('.tagName')
 	)
 }, false)

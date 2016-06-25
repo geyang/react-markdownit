@@ -2,19 +2,22 @@ import React, {PropTypes, Component} from 'react';
 import Markdown from 'markdown-it';
 import stripIndent from 'strip-indent';
 
-var {string, object} = PropTypes;
+var {string, bool, object} = PropTypes;
 
 export default class MarkdownIt extends Component {
 
 	static propTypes = {
-		container: string,
-		stringIndent: string,
+        /** the tagName of the container element */
+		tagName: string,
+        /** option to turn on string indent removal */
+		stringIndent: bool,
+        /** option to pass into the markdown-it constructor */
 		options: object
 	};
 
 	static defaultProps = {
-		/** the container should be <article> if it is the top-level  */
-		container: 'div',
+		/** the tagName should be <article> if it is the top-level  */
+		tagName: 'div',
 		stripIndent: false,
 		options: {}
 	};
