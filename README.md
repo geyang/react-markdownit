@@ -5,14 +5,14 @@ A React component for rendering Markdown with [markdown-it](https://github.com/m
 ## Install
 
 ```
-npm install --save react-markdown
+npm install --save react-markdownit
 ```
 
 ## Usage
 
 ```jsx
 var React = require('react')
-var Markdown = require('react-markdown')
+var Markdown = require('react-markdownit')
 
 class Example extends React.Component {
 	render() {
@@ -23,7 +23,7 @@ class Example extends React.Component {
 
 				{/* Or pass it as children */}
 				{/* You can nest React components, too */}
-				<Markdown>
+				<Markdown >
 					{`
 					## Header
 
