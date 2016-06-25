@@ -23,7 +23,7 @@ export default class MarkdownIt extends Component {
 	};
 
 	render() {
-		var {Container} = this.props;
+		var Container = this.props.tagName;
 		return (<Container>{this.content()}</Container>);
 	}
 
