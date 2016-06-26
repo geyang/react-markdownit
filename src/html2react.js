@@ -31,7 +31,7 @@ function attrs2props(attrs) {
 }
 
 function node2react(node) {
-    var Tag = "" + node.tag;
+    var Tag = "" + node.tagName;
     var props = attrs2props(node.attributes);
     return (<Tag {...props} dangerouslySetInnerHTML={{__html: node.innerHTML}}/>)
 }
