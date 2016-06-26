@@ -11,13 +11,10 @@ import Highlight from "react-highlight";
 import MarkdownExample from "../react-markdownit.example";
 import MarkdownExampleSource from "!!raw!../react-markdownit.example";
 import MarkdownAST from "!!react-docgen!../index";
-// import HappySandwichMakerExample from "../HappySandwichMaker.example";
-// import HappySandwichMakerSource from "!!raw!../HappySandwichMaker.example";
-// const HappySandwichMakerAST = require("!!react-docgen!../HappySandwichMaker");
 
 export default function Readme({}) {
     return (
-        <Markdown>
+        <Markdown stripIndent={true}>
             {`
             # React ES6 Component Template
             [![npm](https://img.shields.io/npm/v/npm.svg?maxAge=2592000)]()
@@ -28,7 +25,7 @@ export default function Readme({}) {
             ## Usage
             `}
             <Highlight>
-                npm install @uber/react-color-scales
+                npm install react-markdownit
             </Highlight>
             {`
             ## \`HappySandwichMaker\` Component

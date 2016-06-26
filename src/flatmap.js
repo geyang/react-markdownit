@@ -4,8 +4,8 @@
 export default function flatMap (nestedList) {
     var result = [];
     nestedList.forEach((item)=>{
-        if (item.length >= 1) result.concat(item);
+        if (item.length >= 1) result = result.concat(item);
         else result.push(item);
-    })
+    });
     return result;
 }
