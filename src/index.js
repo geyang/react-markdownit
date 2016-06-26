@@ -32,10 +32,11 @@ export default class MarkdownIt extends Component {
             <Container dangerouslySetInnerHTML={{__html: this.renderMarkdown(this.props.source)}}/>
         );
         else {
-            var _children = Array.prototype.slice.call(children).map((child) => {
+            var _children = Array.prototype.slice.call(children).map((child, index) => {
                 if (typeof child === "string") return parser.parse(this.renderMarkdown(child));
                 else return child;
             });
+            console.log(flatMap(_children));
             return (
                 <Container {..._props}>
                     {flatMap(_children)}
