@@ -17,7 +17,8 @@ export default function Readme({}) {
         <Markdown stripIndent={true}>
             {`
             # React ES6 Component Template
-            [![npm](https://img.shields.io/npm/v/npm.svg?maxAge=2592000)]()
+            [![npm](https://img.shields.io/npm/v/react-markdownit.svg?maxAge=2592000&style=flat-square)]()
+            [![github](https://img.shields.io/github/downloads/episodeyang/react-markdownit/total.svg?style=flat-square&maxAge=2592000)]()
 
             1. some stuff
             2. some other stuff
