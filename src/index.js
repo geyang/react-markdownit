@@ -36,7 +36,6 @@ export default class MarkdownIt extends Component {
                 if (typeof child === "string") return parser.parse(this.renderMarkdown(child));
                 else return child;
             });
-            console.log(flatMap(_children));
             return (
                 <Container {..._props}>
                     {flatMap(_children)}
