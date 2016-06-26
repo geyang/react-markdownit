@@ -31,17 +31,16 @@ export default class MarkdownIt extends Component {
         if (source) return (
             <Container dangerouslySetInnerHTML={{__html: this.renderMarkdown(this.props.source)}}/>
         );
-        else {
-            var _children = Array.prototype.slice.call(children).map((child, index) => {
-                if (typeof child === "string") return parser.parse(this.renderMarkdown(child));
-                else return child;
-            });
-            return (
-                <Container {..._props}>
-                    {flatMap(_children)}
-                </Container>
-            );
-        }
+        if (!Array.isArray(children)) children = [children];
+        var _children = Array.prototype.slice.call(children).map((child, index) => {
+            if (typeof child === "string") return parser.parse(this.renderMarkdown(child));
+            else return child;
+        });
+        return (
+            <Container {..._props}>
+                {flatMap(_children)}
+            </Container>
+        );
     }
 
     componentWillUpdate(nextProps, nextState) {

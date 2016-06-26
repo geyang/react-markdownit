@@ -13,12 +13,14 @@ export default class MarkdownitExample extends React.Component {
                 <Markdown style={exampleStyle} source="**Markdown is awesome!**"/>
                 {/* Or pass it as children */}
                 {/* You can nest React components, too */}
-                <Markdown style={exampleStyle} stripIndent={true}>
-                    {`
-                    ## Header
-
-                    1. One
-                    2. Two
+                <Markdown style={exampleStyle} stripIndent={true} tagName="td">{`
+                    The protein we add into the sandwich.
+                    For example:
+                    - Teriyaki Chicken
+                    - Phily-cheese Steak
+                    - Tuna Salad
+                    - Seafood Salad
+                    - fake chicken patty (veg)
                     `}
                     <div>Nested component</div>
                     {`Test`}

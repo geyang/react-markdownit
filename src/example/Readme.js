@@ -32,11 +32,7 @@ export default function Readme({}) {
             This component makes you a delicious Subway sandwich.
             `}
             <MarkdownExample/>{`
-            ## Props
-            `}
-            {`
-            ## Code
-            `}
+            ## Example Source Code`}
             <Highlight>{MarkdownExampleSource}</Highlight>
         </Markdown>
     )
