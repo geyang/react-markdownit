@@ -13,7 +13,9 @@ const build_entry = {
   app: "./src/example/index.js",
   vendor: [
     "react",
-    "react-dom"
+    "react-dom",
+    "xmldom"
+
   ]
 };
 
