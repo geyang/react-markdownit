@@ -1,8 +1,9 @@
 import React, {PropTypes, Component} from 'react';
 import Markdown from 'markdown-it';
-import flatMap from "./flatmap";
+import flatMap from './flatmap';
 import Html2React from "./html2react";
 import stripIndent from 'strip-indent';
+import {DOMParser} from 'xmlshim';
 
 var parser = new Html2React();
 var {string, bool, object} = PropTypes;

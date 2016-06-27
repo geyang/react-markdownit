@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "html-to-react": "^1.0.0",
-    "strip-indent": "^1.0.1"
+    "strip-indent": "^1.0.1",
+    "xmlshim": "^0.2.0"
   },
   "peerDependencies": {
     "react": ">=0.14.0",
