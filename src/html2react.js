@@ -3,6 +3,10 @@
  */
 
 import React from "react";
+if (typeof DOMParser === "undefined") {
+    var DOMParser = require('xmldom').DOMParser;
+}
+
 
 const propConversion = {
     "class": "className"

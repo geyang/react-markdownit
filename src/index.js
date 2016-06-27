@@ -4,10 +4,6 @@ import flatMap from './flatmap';
 import Html2React from "./html2react";
 import stripIndent from 'strip-indent';
 
-if (typeof DOMParser === "undefined") {
-    var DOMParser = require('xmldom').DOMParser;
-}
-
 var parser = new Html2React();
 var {string, bool, object} = PropTypes;
 
