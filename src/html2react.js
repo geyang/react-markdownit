@@ -9,6 +9,7 @@ var serializer = new xmldom.XMLSerializer;
 
 const propConversion = {
     "class": "className",
+    // xmldom node properties need to be escaped
     "_ownerElement": "@@ignore"
 };
 
@@ -49,11 +50,6 @@ function node2react(node) {
 export default class Html2React {
     constructor(options) {
         this.domParser = new DOMParser;
-        // try {
-        //     this.domParser = new DOMParser();
-        // } catch (e) {
-        //     this.domParser = new require('xmldom').DOMParser;
-        // }
     }
 
     parse(html, shallow = true) {
