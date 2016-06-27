@@ -10,7 +10,7 @@
   "dependencies": {
     "html-to-react": "^1.0.0",
     "strip-indent": "^1.0.1",
-    "xmlshim": "^0.2.0"
+    "xmldom": "^0.1.22"
   },
   "peerDependencies": {
     "react": ">=0.14.0",
