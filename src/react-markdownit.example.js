@@ -14,7 +14,7 @@ export default class MarkdownitExample extends React.Component {
                 {/* Or pass it as children */}
                 {/* You can nest React components, too */}
                 <h3>Example Below should show a list of proteins.</h3>
-                <Markdown style={exampleStyle} stripIndent={true} tagName="td">{`
+                <Markdown style={exampleStyle} stripIndent={true} tagName="div">{`
                     The protein we add into the sandwich.
                     For example:
                     - Teriyaki Chicken
