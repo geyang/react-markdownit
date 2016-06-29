@@ -36,14 +36,16 @@ function attrs2props(attrs) {
     return props
 }
 
-function node2react(node) {
-    var Tag = "" + node.tagName;
-    var props = attrs2props(node.attributes);
-    if (node.nodeType === 3) { // is a text node. nodeType == 3 never gets old!
-        return serializer.serializeToString(node);
-    } else {
-        var __html = Array.prototype.slice.call(node.childNodes).map(n=> serializer.serializeToString(n)).join('');
-        return (<Tag {...props} dangerouslySetInnerHTML={{__html}}/>)
+function Node2react(rootIndexKey) {
+    return function node2react(node, index) {
+        var Tag = "" + node.tagName;
+        var props = attrs2props(node.attributes);
+        if (node.nodeType === 3) { // is a text node. nodeType == 3 never gets old!
+            return serializer.serializeToString(node, rootIndexKey + '.' + index);
+        } else {
+            var __html = Array.prototype.slice.call(node.childNodes).map(n=> serializer.serializeToString(n)).join('');
+            return (<Tag {...props} key={rootIndexKey + '.' + index} dangerouslySetInnerHTML={{__html}}/>)
+        }
     }
 }
 
@@ -52,10 +54,10 @@ export default class Html2React {
         this.domParser = new DOMParser;
     }
 
-    parse(html, shallow = true) {
+    parse(html, shallow = true, index = undefined) {
         var frag = this.domParser.parseFromString(html, "text/html");
         var nodes = frag.childNodes;
-        if (shallow) return Array.prototype.slice.call(nodes).map(node2react)
+        if (shallow) return Array.prototype.slice.call(nodes).map(Node2react("@@key:" + index))
     }
 
 

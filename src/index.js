@@ -1,4 +1,4 @@
-import React, {PropTypes, Component} from 'react';
+import React, {PropTypes, Component, cloneElement} from 'react';
 import Markdown from 'markdown-it';
 import flatMap from './flatmap';
 import Html2React from "./html2react";
@@ -33,8 +33,11 @@ export default class MarkdownIt extends Component {
         );
         if (!Array.isArray(children)) children = [children];
         var _children = Array.prototype.slice.call(children).map((child, index) => {
-            if (typeof child === "string") return parser.parse(this.renderMarkdown(child));
-            else return child;
+            if (typeof child === "string") return parser.parse(this.renderMarkdown(child), true, index);
+            else {
+                cloneElement(child, {key: "@@key:" + index}, child.children);
+                return child;
+            }
         });
         return (
             <Container {..._props}>
