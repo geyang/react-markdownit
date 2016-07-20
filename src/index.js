@@ -26,7 +26,7 @@ export default class MarkdownIt extends Component {
     };
 
     render() {
-        var {source, tagName, children, stripIndent, ..._props} = this.props;
+        var {source, tagName, children, stripIndent, options, ..._props} = this.props;
         var Container = tagName;
         if (source) return (
             <Container dangerouslySetInnerHTML={{__html: this.renderMarkdown(this.props.source)}}/>
