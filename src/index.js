@@ -29,7 +29,7 @@ export default class MarkdownIt extends Component {
         var {source, tagName, children, ..._props} = this.props;
         var Container = tagName;
         if (source) return (
-            <Container dangerouslySetInnerHTML={{__html: this.renderMarkdown(this.props.source)}}/>
+            <Container dangerouslySetInnerHTML={{__html: this.renderMarkdown(this.props.source)}} {..._props} />
         );
         if (!Array.isArray(children)) children = [children];
         var _children = Array.prototype.slice.call(children).map((child, index) => {
