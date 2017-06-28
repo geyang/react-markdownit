@@ -13,7 +13,7 @@ export default class MarkdownIt extends Component {
         /** the tagName of the container element */
         tagName: string,
         /** option to turn on string indent removal */
-        stringIndent: bool,
+        stripIndent: bool,
         /** option to pass into the markdown-it constructor */
         options: object
     };
@@ -26,7 +26,7 @@ export default class MarkdownIt extends Component {
     };
 
     render() {
-        var {source, tagName, children, ..._props} = this.props;
+        var {source, tagName, children, stripIndent, options, ..._props} = this.props;
         var Container = tagName;
         if (source) return (
             <Container dangerouslySetInnerHTML={{__html: this.renderMarkdown(this.props.source)}} {..._props} />

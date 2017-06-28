@@ -1,6 +1,6 @@
 {
   "name": "react-markdownit",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "description": "A React component for rendering Markdown with markdown-it",
   "main": "lib/index.js",
   "repository": {
